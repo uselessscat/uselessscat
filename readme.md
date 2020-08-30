@@ -8,5 +8,5 @@
 
 ### Links
 
-  - [Pinned Repositories](https://github.com/search?q=user:uselessscat%2Btopic:pinned)
+  - [Pinned Repositories](https://github.com/search?q=user:uselessscat%20topic:pinned)
 
