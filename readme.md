@@ -4,7 +4,7 @@
 
 ### Languages (Public repos)
 
-[![Python](https://img.shields.io/badge/dynamic/json?label=Python&labelColor=3776AB&logo=python&logoColor=white&color=black&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Blanguage:python)](https://github.com/search?q=user:uselessscat&l=python)
+[![Python](https://img.shields.io/badge/dynamic/json?label=Python&labelColor=3776AB&logo=python&logoColor=white&color=black&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Blanguage:python)](https://github.com/search?q=user:uselessscat%20topic:python)
 
 ### Links
 
