@@ -28,7 +28,7 @@
 [![Redis](https://img.shields.io/badge/dynamic/json?label=Redis&labelColor=DC382D&logo=redis&color=24292e&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:redis)](https://github.com/search?q=user:uselessscat%20topic:redis)
 
 ![Platforms](https://img.shields.io/badge/-Platforms-24292e)
-[![Docker](https://img.shields.io/badge/dynamic/json?label=Docker&labelColor=2C2D72&logo=docker&color=24292e&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:docker)](https://github.com/search?q=user:uselessscat%20topic:docker)
+[![Docker](https://img.shields.io/badge/dynamic/json?label=Docker&labelColor=2496ED&logo=docker&color=24292e&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:docker)](https://github.com/search?q=user:uselessscat%20topic:docker)
 
 
 ## Links
