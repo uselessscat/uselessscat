@@ -3,7 +3,7 @@
 ![Social](https://img.shields.io/badge/-Social%20links-24292E)
 [![telegram](https://img.shields.io/badge/Telegram-@uselessscat-2CA5E0?logo=telegram&labelColor=24292E)](https://www.t.me/uselessscat)
 [![github](https://img.shields.io/badge/Github-uselessscat-181717?logo=github&labelColor=24292E)](https://github.com/uselessscat)
-[![linkedin](https://img.shields.io/badge/LinkedIn-ariecb-0077B5?logo=linkedin&labelColor=24292E)](https://www.linkedin.com/in/ariecb/)
+[![linkedin](https://img.shields.io/badge/LinkedIn-ariecb-0077B5?logo=linkedin&labelColor=24292E&logoColor=0077B5)](https://www.linkedin.com/in/ariecb/)
 [![stackoverflow-es](https://img.shields.io/badge/StackOverflow%20ES-uselessscat-FE7A16?logo=stackoverflow&labelColor=24292E)](https://es.stackoverflow.com/users/4617/uselessscat)
 [![stackoverflow](https://img.shields.io/badge/StackOverflow-uselessscat-FE7A16?logo=stackoverflow&labelColor=24292E)](https://stackoverflow.com/users/6658955/uselessscat)
 [![hackerrank](https://img.shields.io/badge/HackerRank-UselesssCat-2EC866?logo=hackerrank&labelColor=24292E)](https://www.hackerrank.com/UselesssCat)
