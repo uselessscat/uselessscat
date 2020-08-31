@@ -31,7 +31,7 @@
 [![React](https://img.shields.io/badge/dynamic/json?label=React&labelColor=24292E&logo=react&color=61DAFB&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:react)](https://github.com/search?q=user:uselessscat%20topic:react)
 [![Unity](https://img.shields.io/badge/dynamic/json?label=Unity&labelColor=24292E&logo=unity&color=111&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:unity)](https://github.com/search?q=user:uselessscat%20topic:unity)
 
-![Data](https://img.shields.io/badge/-Databases-24292E)
+![Data](https://img.shields.io/badge/-Data-24292E)
 [![MySQL](https://img.shields.io/badge/dynamic/json?label=MySQL&labelColor=24292E&logo=mysql&color=4479A1&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:mysql)](https://github.com/search?q=user:uselessscat%20topic:mysql)
 [![PostgreSql](https://img.shields.io/badge/dynamic/json?label=PostgreSql&labelColor=24292E&logo=postgresql&logoColor=336791&color=336791&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:postgresql)](https://github.com/search?q=user:uselessscat%20topic:postgresql)
 [![Redis](https://img.shields.io/badge/dynamic/json?label=Redis&labelColor=24292E&logo=redis&color=DC382D&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:redis)](https://github.com/search?q=user:uselessscat%20topic:redis)
