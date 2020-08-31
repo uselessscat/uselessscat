@@ -15,6 +15,7 @@
 [![php](https://img.shields.io/badge/dynamic/json?label=PHP&labelColor=24292e&logo=php&color=777BB4&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:php)](https://github.com/search?q=user:uselessscat%20topic:php)
 [![c](https://img.shields.io/badge/dynamic/json?label=C&labelColor=24292e&logo=c&color=A8B9CC&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:c)](https://github.com/search?q=user:uselessscat%20topic:c)
 [![lua](https://img.shields.io/badge/dynamic/json?label=Lua&labelColor=24292e&logo=lua&color=2C2D72&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:lua)](https://github.com/search?q=user:uselessscat%20topic:lua)
+[![csharp](https://img.shields.io/badge/dynamic/json?label=C%23&labelColor=24292e&logo=c-sharp&color=239120&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:csharp)](https://github.com/search?q=user:uselessscat%20topic:csharp)
 [![assembler](https://img.shields.io/badge/dynamic/json?label=Assembler&labelColor=24292e&logo=cog&color=777&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:assembler)](https://github.com/search?q=user:uselessscat%20topic:assembler)
 
 ![Frameworks](https://img.shields.io/badge/-Frameworks-24292e)
@@ -22,6 +23,10 @@
 [![Lumen](https://img.shields.io/badge/dynamic/json?label=Lumen&labelColor=24292e&logo=lumen&color=E74430&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:lumen)](https://github.com/search?q=user:uselessscat%20topic:lumen)
 [![FastApi](https://img.shields.io/badge/dynamic/json?label=FastApi&labelColor=24292E&logo=fastapi&color=009688&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:fastapi)](https://github.com/search?q=user:uselessscat%20topic:fastapi)
 [![Flask](https://img.shields.io/badge/dynamic/json?label=Flask&labelColor=24292e&logo=flask&color=111&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:flask)](https://github.com/search?q=user:uselessscat%20topic:flask)
+[![NodeJS](https://img.shields.io/badge/dynamic/json?label=Node%20js&labelColor=24292E&logo=node.js&color=339933&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:nodejs)](https://github.com/search?q=user:uselessscat%20topic:nodejs)
+[![Serverless](https://img.shields.io/badge/dynamic/json?label=Serverless&labelColor=24292E&logo=serverless&color=FD5750&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:serverless)](https://github.com/search?q=user:uselessscat%20topic:serverless)
+[![React](https://img.shields.io/badge/dynamic/json?label=React&labelColor=24292E&logo=react&color=61DAFB&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:react)](https://github.com/search?q=user:uselessscat%20topic:react)
+[![Unity](https://img.shields.io/badge/dynamic/json?label=Unity&labelColor=24292E&logo=unity&color=111&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:unity)](https://github.com/search?q=user:uselessscat%20topic:unity)
 
 ![Databases](https://img.shields.io/badge/-Databases-24292e)
 [![PostgreSql](https://img.shields.io/badge/dynamic/json?label=PostgreSql&labelColor=24292e&logo=postgresql&color=336791&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:postgresql)](https://github.com/search?q=user:uselessscat%20topic:postgresql)
@@ -29,6 +34,7 @@
 
 ![Platforms](https://img.shields.io/badge/-Platforms-24292e)
 [![Docker](https://img.shields.io/badge/dynamic/json?label=Docker&labelColor=24292e&logo=docker&color=2496ED&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:docker)](https://github.com/search?q=user:uselessscat%20topic:docker)
+[![AWS](https://img.shields.io/badge/dynamic/json?label=AWS&labelColor=24292E&logo=amazon-aws&color=232F3E&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:aws)](https://github.com/search?q=user:uselessscat%20topic:aws)
 
 
 ## Links
