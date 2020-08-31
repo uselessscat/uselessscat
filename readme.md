@@ -41,7 +41,7 @@
 
 ![Envs & Tools](https://img.shields.io/badge/-Envs%20&%20Tools-24292E)
 [![Visual Studio Code](https://img.shields.io/badge/dynamic/json?label=Visual%20Studio%20Code&labelColor=24292E&logo=visual-studio-code&logoColor=007ACC&color=007ACC&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:vscode)](https://github.com/search?q=user:uselessscat%20topic:vscode)
-[![Git](https://img.shields.io/badge/dynamic/json?label=Git&labelColor=24292E&logo=git&color=F05032&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat)](https://github.com/search?q=user:uselessscat%20topic:git)
+[![Git](https://img.shields.io/badge/dynamic/json?label=Git&labelColor=24292E&logo=git&color=F05032&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat)](https://github.com/search?q=user:uselessscat)
 [![GitHub Actions](https://img.shields.io/badge/dynamic/json?label=GitHub%20Actions&labelColor=24292E&logo=github-actions&color=2088FF&suffix=%20Repos&query=$.total_count&url=https://api.github.com/search/repositories?q=user:uselessscat%2Btopic:githubactions)](https://github.com/search?q=user:uselessscat%20topic:githubactions)
 
 ![Platforms](https://img.shields.io/badge/-Platforms-24292E)
