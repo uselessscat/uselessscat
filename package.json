@@ -1,0 +1,24 @@
+{
+  "name": "uselessscat",
+  "version": "0.0.1",
+  "description": "Personal repository",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uselessscat/uselessscat.git"
+  },
+  "author": "uselessscat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uselessscat/uselessscat/issues"
+  },
+  "homepage": "https://github.com/uselessscat/uselessscat#readme",
+  "dependencies": {
+    "@octokit/core": "^3.1.2",
+    "dotenv": "^8.2.0"
+  }
+}
