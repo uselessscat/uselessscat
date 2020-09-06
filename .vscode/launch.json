@@ -2,12 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
             "name": "Run",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}\\index.js",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/index.js",
+            "console": "integratedTerminal",
+            "trace": true
         }
     ]
 }

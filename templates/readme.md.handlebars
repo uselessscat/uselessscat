@@ -1,0 +1,27 @@
+{{~#*inline "url"}}
+https://img.shields.io/static/v1?
+    {{~#if message}}message={{message}}{{~^~}}message=No%20message{{~/if}}
+    {{~#if color}}&color={{color}}{{~/if}}
+    {{~#if label}}&label={{label}}{{~^~}}&label={{~/if}}
+    {{~#if labelColor}}&labelColor={{labelColor}}{{~/if}}
+    {{~#if logo}}&logo={{logo}}{{~/if}}
+    {{~#if logoColor}}&logoColor={{logoColor}}{{~/if}}
+{{~/inline}}
+{{~#*inline "image"}}![{{#if label}}{{label}}{{^~}}{{message}}{{/if}}]({{>url this}}){{~/inline}}
+{{~#*inline "image_link"}}[{{>image this}}]({{url}}){{~/inline}}{{!
+here starts the md
+}}## Bagdes 😀
+
+{{#sections}}
+{{>image this}}
+
+{{#each elements ~}}
+{{>image_link this}}
+
+{{/each}}
+
+{{/sections}}
+
+## Links
+
+- [Pinned Repositories](https://github.com/search?q=user:uselessscat%20topic:pinned)

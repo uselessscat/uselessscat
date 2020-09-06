@@ -1,0 +1,481 @@
+{
+    "sections": [
+        {
+            "message": "Social%20links",
+            "color": "24292E",
+            "elements": {
+                "telegram": {
+                    "label": "Telegram",
+                    "labelColor": "24292E",
+                    "message": "@uselessscat",
+                    "color": "2CA5E0",
+                    "logo": "telegram",
+                    "url": "https://www.t.me/uselessscat"
+                },
+                "github": {
+                    "label": "Github",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "181717",
+                    "logo": "github",
+                    "url": "https://github.com/uselessscat"
+                },
+                "linkedin": {
+                    "label": "LinkedIn",
+                    "labelColor": "24292E",
+                    "message": "ariecb",
+                    "color": "0077B5",
+                    "logo": "linkedin",
+                    "logoColor": "0077B5",
+                    "url": "https://www.linkedin.com/in/ariecb/"
+                },
+                "stackoverflow-es": {
+                    "label": "StackOverflow%20ES",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "FE7A16",
+                    "logo": "stackoverflow",
+                    "logoColor": "FE7A16",
+                    "url": "https://es.stackoverflow.com/users/4617/uselessscat"
+                },
+                "stackoverflow": {
+                    "label": "StackOverflow",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "FE7A16",
+                    "logo": "stackoverflow",
+                    "logoColor": "FE7A16",
+                    "url": "https://stackoverflow.com/users/6658955/uselessscat"
+                },
+                "hackerrank": {
+                    "label": "HackerRank",
+                    "labelColor": "24292E",
+                    "message": "UselesssCat",
+                    "color": "2EC866",
+                    "logo": "hackerrank",
+                    "logoColor": "2EC866",
+                    "url": "https://www.hackerrank.com/UselesssCat"
+                },
+                "codersrank": {
+                    "label": "CodersRank",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "67A4AC",
+                    "logo": "codersrank",
+                    "logoColor": "67A4AC",
+                    "url": "https://profile.codersrank.io/user/uselessscat/"
+                }
+            }
+        },
+        {
+            "message": "Languages",
+            "color": "24292E",
+            "elements": {
+                "python": {
+                    "label": "Python",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "3776AB",
+                    "logo": "python",
+                    "logoColor": "3776AB",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:python",
+                    "topic": "python"
+                },
+                "javascript": {
+                    "label": "Javascript",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "F7DF1E",
+                    "logo": "javascript",
+                    "logoColor": "F7DF1E",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:javascript",
+                    "topic": "javascript"
+                },
+                "csharp": {
+                    "label": "C%23",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "239120",
+                    "logo": "c-sharp",
+                    "logoColor": "FFF",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:csharp",
+                    "topic": "csharp"
+                },
+                "rust": {
+                    "label": "Rust",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "111",
+                    "logo": "rust",
+                    "logoColor": "FFF",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:rust",
+                    "topic": "rust"
+                },
+                "php": {
+                    "label": "PHP",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "777BB4",
+                    "logo": "php",
+                    "logoColor": "777BB4",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:php",
+                    "topic": "php"
+                },
+                "c": {
+                    "label": "C",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "A8B9CC",
+                    "logo": "c",
+                    "logoColor": "A8B9CC",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:c",
+                    "topic": "c"
+                },
+                "go": {
+                    "label": "Go",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "00ADD8",
+                    "logo": "go",
+                    "logoColor": "00ADD8",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:go",
+                    "topic": "go"
+                },
+                "lua": {
+                    "label": "Lua",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "2C2D72",
+                    "logo": "lua",
+                    "logoColor": "FFF",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:lua",
+                    "topic": "lua"
+                },
+                "java": {
+                    "label": "Java",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "007396",
+                    "logo": "java",
+                    "logoColor": "FFF",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:java",
+                    "topic": "java"
+                },
+                "assembler": {
+                    "label": "Assembler",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "777",
+                    "logo": "",
+                    "logoColor": "777",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:assembler",
+                    "topic": "assembler"
+                },
+                "scala": {
+                    "label": "Scala",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "DC322F",
+                    "logo": "scala",
+                    "logoColor": "DC322F",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:scala",
+                    "topic": "scala"
+                }
+            }
+        },
+        {
+            "message": "Framework",
+            "color": "24292E",
+            "elements": {
+                "vanilla": {
+                    "label": "Vanilla",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "green",
+                    "logo": "",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:vanilla",
+                    "topic": "vanilla"
+                },
+                "lumen": {
+                    "label": "Lumen",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "E74430",
+                    "logo": "lumen",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:lumen",
+                    "topic": "lumen"
+                },
+                "laravel": {
+                    "label": "Laravel",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "FF2D20",
+                    "logo": "laravel",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:laravel",
+                    "topic": "laravel"
+                },
+                "fastapi": {
+                    "label": "FastApi",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "009688",
+                    "logo": "fastapi",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:fastapi",
+                    "topic": "fastapi"
+                },
+                "flask": {
+                    "label": "Flask",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "111",
+                    "logo": "flask",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:flask",
+                    "topic": "flask"
+                },
+                "nodejs": {
+                    "label": "Node%20Js",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "339933",
+                    "logo": "node.js",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:nodejs",
+                    "topic": "nodejs"
+                },
+                "serverless": {
+                    "label": "Serverless",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "FD5750",
+                    "logo": "serverless",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:serverless",
+                    "topic": "serverless"
+                },
+                "react": {
+                    "label": "React",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "61DAFB",
+                    "logo": "react",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:react",
+                    "topic": "react"
+                },
+                "unity": {
+                    "label": "Unity",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "111",
+                    "logo": "unity",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:unity",
+                    "topic": "unity"
+                },
+                "spark": {
+                    "label": "Spark",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "DB5925",
+                    "logo": "",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:spark",
+                    "topic": "spark"
+                }
+            }
+        },
+        {
+            "message": "Data",
+            "color": "24292E",
+            "elements": {
+                "mysql": {
+                    "label": "MySQL",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "4479A1",
+                    "logo": "mysql",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:mysql",
+                    "topic": "mysql"
+                },
+                "postgresql": {
+                    "label": "PostgreSql",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "336791",
+                    "logo": "postgresql",
+                    "logoColor": "336791",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:postgresql",
+                    "topic": "postgresql"
+                },
+                "redis": {
+                    "label": "Redis",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "DC382D",
+                    "logo": "redis",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:redis",
+                    "topic": "redis"
+                },
+                "elasticsearch": {
+                    "label": "Elastic",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "005571",
+                    "logo": "elasticsearch",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:elasticsearch",
+                    "topic": "elasticsearch"
+                },
+                "mongodb": {
+                    "label": "MongoDB",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "47A248",
+                    "logo": "mongodb",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:mongodb",
+                    "topic": "mongodb"
+                },
+                "neo4j": {
+                    "label": "Neo4j",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "008CC1",
+                    "logo": "neo4j",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:neo4j",
+                    "topic": "neo4j"
+                },
+                "nifi": {
+                    "label": "Nifi",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "728e9b",
+                    "logo": "",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:nifi",
+                    "topic": "nifi"
+                },
+                "kafka": {
+                    "label": "Kafka",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "111",
+                    "logo": "apache-kafka",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:kafka",
+                    "topic": "kafka"
+                }
+            }
+        },
+        {
+            "message": "Envs%20%26%20Tools",
+            "color": "24292E",
+            "elements": {
+                "vscode": {
+                    "label": "Visual%20Studio%20Code",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "007ACC",
+                    "logo": "visual-studio-code",
+                    "logoColor": "007ACC",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:vscode",
+                    "topic": "vscode"
+                },
+                "git": {
+                    "label": "Git",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "F05032",
+                    "logo": "git",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat",
+                    "topic": "git"
+                },
+                "githubactions": {
+                    "label": "GitHub%20Actions",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "2088FF",
+                    "logo": "github-actions",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:githubactions",
+                    "topic": "githubactions"
+                }
+            }
+        },
+        {
+            "message": "Platforms",
+            "color": "24292E",
+            "elements": {
+                "debian": {
+                    "label": "Debian",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "A81D33",
+                    "logo": "debian",
+                    "logoColor": "A81D33",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:debian",
+                    "topic": "debian"
+                },
+                "raspberrypi": {
+                    "label": "Raspberry",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "C51A4A",
+                    "logo": "raspberry-pi",
+                    "logoColor": "C51A4A",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:raspberrypi",
+                    "topic": "raspberrypi"
+                },
+                "arduino": {
+                    "label": "Arduino",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "00979D",
+                    "logo": "arduino",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:arduino",
+                    "topic": "arduino"
+                },
+                "docker": {
+                    "label": "Docker",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "2496ED",
+                    "logo": "docker",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:docker",
+                    "topic": "docker"
+                },
+                "kubernetes": {
+                    "label": "Kubernetes",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "326CE5",
+                    "logo": "kubernetes",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:kubernetes",
+                    "topic": "kubernetes"
+                },
+                "aws": {
+                    "label": "AWS",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "232F3E",
+                    "logo": "amazon-aws",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:aws",
+                    "topic": "aws"
+                }
+            }
+        }
+    ]
+}
