@@ -21,6 +21,7 @@
 [![Java](https://img.shields.io/static/v1?message=1%20Repos&color=007396&label=Java&labelColor=24292E&logo=java&logoColor=FFF)](https://github.com/search?q&#x3D;user:uselessscat%20topic:java)
 [![Assembler](https://img.shields.io/static/v1?message=1%20Repos&color=777&label=Assembler&labelColor=24292E&logoColor=777)](https://github.com/search?q&#x3D;user:uselessscat%20topic:assembler)
 [![Scala](https://img.shields.io/static/v1?message=2%20Repos&color=DC322F&label=Scala&labelColor=24292E&logo=scala&logoColor=DC322F)](https://github.com/search?q&#x3D;user:uselessscat%20topic:scala)
+[![Kotlin](https://img.shields.io/static/v1?message=1%20Repos&color=0095D5&label=Kotlin&labelColor=24292E&logo=kotlin)](https://github.com/search?q&#x3D;user:uselessscat%20topic:kotlin)
 
 ![Framework](https://img.shields.io/static/v1?message=Framework&color=24292E&label=)
 [![Vanilla](https://img.shields.io/static/v1?message=7%20Repos&color=green&label=Vanilla&labelColor=24292E)](https://github.com/search?q&#x3D;user:uselessscat%20topic:vanilla)
@@ -46,8 +47,9 @@
 
 ![Envs%20%26%20Tools](https://img.shields.io/static/v1?message=Envs%20%26%20Tools&color=24292E&label=)
 [![Visual%20Studio%20Code](https://img.shields.io/static/v1?message=3%20Repos&color=007ACC&label=Visual%20Studio%20Code&labelColor=24292E&logo=visual-studio-code&logoColor=007ACC)](https://github.com/search?q&#x3D;user:uselessscat%20topic:vscode)
-[![Git](https://img.shields.io/static/v1?message=0%20Repos&color=F05032&label=Git&labelColor=24292E&logo=git)](https://github.com/search?q&#x3D;user:uselessscat)
+[![Git](https://img.shields.io/static/v1?message=47%20Repos&color=F05032&label=Git&labelColor=24292E&logo=git)](https://github.com/search?q&#x3D;user:uselessscat)
 [![GitHub%20Actions](https://img.shields.io/static/v1?message=1%20Repos&color=2088FF&label=GitHub%20Actions&labelColor=24292E&logo=github-actions)](https://github.com/search?q&#x3D;user:uselessscat%20topic:githubactions)
+[![OpenAPI](https://img.shields.io/static/v1?message=1%20Repos&color=6BA539&label=OpenAPI&labelColor=24292E&logo=openapi-initiative)](https://github.com/search?q&#x3D;user:uselessscat%20topic:openapi)
 
 ![Platforms](https://img.shields.io/static/v1?message=Platforms&color=24292E&label=)
 [![Debian](https://img.shields.io/static/v1?message=0%20Repos&color=A81D33&label=Debian&labelColor=24292E&logo=debian&logoColor=A81D33)](https://github.com/search?q&#x3D;user:uselessscat%20topic:debian)

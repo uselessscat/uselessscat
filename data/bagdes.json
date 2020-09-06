@@ -180,6 +180,16 @@
                     "logoColor": "DC322F",
                     "url": "https://github.com/search?q=user:uselessscat%20topic:scala",
                     "topic": "scala"
+                },
+                "kotlin": {
+                    "label": "Kotlin",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "0095D5",
+                    "logo": "kotlin",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:kotlin",
+                    "topic": "kotlin"
                 }
             }
         },
@@ -408,6 +418,16 @@
                     "logoColor": "",
                     "url": "https://github.com/search?q=user:uselessscat%20topic:githubactions",
                     "topic": "githubactions"
+                },
+                "openapi": {
+                    "label": "OpenAPI",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "6BA539",
+                    "logo": "openapi-initiative",
+                    "logoColor": "",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:openapi",
+                    "topic": "openapi"
                 }
             }
         },
