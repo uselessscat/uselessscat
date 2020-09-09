@@ -51,6 +51,7 @@ function summarizeResults(response) {
             return previous;
         }, {});
 
+    console.log(summarizations);
     return summarizations;
 }
 

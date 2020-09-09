@@ -11,7 +11,7 @@
 
 ![Languages](https://img.shields.io/static/v1?message=Languages&color=24292E&label=)
 [![Python](https://img.shields.io/static/v1?message=5%20Repos&color=3776AB&label=Python&labelColor=24292E&logo=python&logoColor=3776AB)](https://github.com/search?q&#x3D;user:uselessscat%20topic:python)
-[![Javascript](https://img.shields.io/static/v1?message=3%20Repos&color=F7DF1E&label=Javascript&labelColor=24292E&logo=javascript&logoColor=F7DF1E)](https://github.com/search?q&#x3D;user:uselessscat%20topic:javascript)
+[![Javascript](https://img.shields.io/static/v1?message=4%20Repos&color=F7DF1E&label=Javascript&labelColor=24292E&logo=javascript&logoColor=F7DF1E)](https://github.com/search?q&#x3D;user:uselessscat%20topic:javascript)
 [![C%23](https://img.shields.io/static/v1?message=3%20Repos&color=239120&label=C%23&labelColor=24292E&logo=c-sharp&logoColor=FFF)](https://github.com/search?q&#x3D;user:uselessscat%20topic:csharp)
 [![Rust](https://img.shields.io/static/v1?message=1%20Repos&color=111&label=Rust&labelColor=24292E&logo=rust&logoColor=FFF)](https://github.com/search?q&#x3D;user:uselessscat%20topic:rust)
 [![PHP](https://img.shields.io/static/v1?message=2%20Repos&color=777BB4&label=PHP&labelColor=24292E&logo=php&logoColor=777BB4)](https://github.com/search?q&#x3D;user:uselessscat%20topic:php)
@@ -29,7 +29,7 @@
 [![Laravel](https://img.shields.io/static/v1?message=1%20Repos&color=FF2D20&label=Laravel&labelColor=24292E&logo=laravel)](https://github.com/search?q&#x3D;user:uselessscat%20topic:laravel)
 [![FastApi](https://img.shields.io/static/v1?message=1%20Repos&color=009688&label=FastApi&labelColor=24292E&logo=fastapi)](https://github.com/search?q&#x3D;user:uselessscat%20topic:fastapi)
 [![Flask](https://img.shields.io/static/v1?message=1%20Repos&color=111&label=Flask&labelColor=24292E&logo=flask)](https://github.com/search?q&#x3D;user:uselessscat%20topic:flask)
-[![Node%20Js](https://img.shields.io/static/v1?message=3%20Repos&color=339933&label=Node%20Js&labelColor=24292E&logo=node.js)](https://github.com/search?q&#x3D;user:uselessscat%20topic:nodejs)
+[![Node%20Js](https://img.shields.io/static/v1?message=4%20Repos&color=339933&label=Node%20Js&labelColor=24292E&logo=node.js)](https://github.com/search?q&#x3D;user:uselessscat%20topic:nodejs)
 [![Serverless](https://img.shields.io/static/v1?message=1%20Repos&color=FD5750&label=Serverless&labelColor=24292E&logo=serverless)](https://github.com/search?q&#x3D;user:uselessscat%20topic:serverless)
 [![React](https://img.shields.io/static/v1?message=1%20Repos&color=61DAFB&label=React&labelColor=24292E&logo=react)](https://github.com/search?q&#x3D;user:uselessscat%20topic:react)
 [![Unity](https://img.shields.io/static/v1?message=3%20Repos&color=111&label=Unity&labelColor=24292E&logo=unity)](https://github.com/search?q&#x3D;user:uselessscat%20topic:unity)
@@ -46,7 +46,7 @@
 [![Kafka](https://img.shields.io/static/v1?message=1%20Repos&color=111&label=Kafka&labelColor=24292E&logo=apache-kafka)](https://github.com/search?q&#x3D;user:uselessscat%20topic:kafka)
 
 ![Envs%20%26%20Tools](https://img.shields.io/static/v1?message=Envs%20%26%20Tools&color=24292E&label=)
-[![Visual%20Studio%20Code](https://img.shields.io/static/v1?message=3%20Repos&color=007ACC&label=Visual%20Studio%20Code&labelColor=24292E&logo=visual-studio-code&logoColor=007ACC)](https://github.com/search?q&#x3D;user:uselessscat%20topic:vscode)
+[![Visual%20Studio%20Code](https://img.shields.io/static/v1?message=4%20Repos&color=007ACC&label=Visual%20Studio%20Code&labelColor=24292E&logo=visual-studio-code&logoColor=007ACC)](https://github.com/search?q&#x3D;user:uselessscat%20topic:vscode)
 [![Git](https://img.shields.io/static/v1?message=47%20Repos&color=F05032&label=Git&labelColor=24292E&logo=git)](https://github.com/search?q&#x3D;user:uselessscat)
 [![GitHub%20Actions](https://img.shields.io/static/v1?message=1%20Repos&color=2088FF&label=GitHub%20Actions&labelColor=24292E&logo=github-actions)](https://github.com/search?q&#x3D;user:uselessscat%20topic:githubactions)
 [![OpenAPI](https://img.shields.io/static/v1?message=1%20Repos&color=6BA539&label=OpenAPI&labelColor=24292E&logo=openapi-initiative)](https://github.com/search?q&#x3D;user:uselessscat%20topic:openapi)
