@@ -64,6 +64,15 @@
                     "logo": "codersrank",
                     "logoColor": "67A4AC",
                     "url": "https://profile.codersrank.io/user/uselessscat/"
+                },
+                "codewars": {
+                    "label": "CoderWars",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "AD2C27",
+                    "logo": "codewars",
+                    "logoColor": "AD2C27",
+                    "url": "https://www.codewars.com/users/uselessscat"
                 }
             }
         },
