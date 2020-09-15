@@ -8,6 +8,7 @@
 [![StackOverflow](https://img.shields.io/static/v1?message=uselessscat&color=FE7A16&label=StackOverflow&labelColor=24292E&logo=stackoverflow&logoColor=FE7A16)](https://stackoverflow.com/users/6658955/uselessscat)
 [![HackerRank](https://img.shields.io/static/v1?message=UselesssCat&color=2EC866&label=HackerRank&labelColor=24292E&logo=hackerrank&logoColor=2EC866)](https://www.hackerrank.com/UselesssCat)
 [![CodersRank](https://img.shields.io/static/v1?message=uselessscat&color=67A4AC&label=CodersRank&labelColor=24292E&logo=codersrank&logoColor=67A4AC)](https://profile.codersrank.io/user/uselessscat/)
+[![Codewars](https://img.shields.io/static/v1?message=uselessscat&color=AD2C27&label=CoderWars&labelColor=24292E&logo=codewars&logoColor=AD2C27)](https://www.codewars.com/users/uselessscat)
 
 ![Languages](https://img.shields.io/static/v1?message=Languages&color=24292E&label=)
 [![Python](https://img.shields.io/static/v1?message=5%20Repos&color=3776AB&label=Python&labelColor=24292E&logo=python&logoColor=3776AB)](https://github.com/search?q&#x3D;user:uselessscat%20topic:python)
