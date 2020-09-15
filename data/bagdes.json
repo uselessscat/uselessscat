@@ -73,6 +73,15 @@
                     "logo": "codewars",
                     "logoColor": "AD2C27",
                     "url": "https://www.codewars.com/users/uselessscat"
+                },
+                "codingame": {
+                    "label": "CodinGame",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "F2BB13",
+                    "logo": "codingame",
+                    "logoColor": "F2BB13",
+                    "url": "https://www.codingame.com/profile/7523c6d6a87764f8b03cb0d42a9eefa27186793"
                 }
             }
         },
