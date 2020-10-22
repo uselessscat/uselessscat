@@ -208,6 +208,16 @@
                     "logoColor": "",
                     "url": "https://github.com/search?q=user:uselessscat%20topic:kotlin",
                     "topic": "kotlin"
+                },
+                "shell": {
+                    "label": "Shell",
+                    "labelColor": "24292E",
+                    "message": "0%20Repos",
+                    "color": "FCC624",
+                    "logo": "linux",
+                    "logoColor": "FCC624",
+                    "url": "https://github.com/search?q=user:uselessscat%20topic:shell",
+                    "topic": "shell"
                 }
             }
         },
