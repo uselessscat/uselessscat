@@ -56,6 +56,15 @@
                     "logoColor": "2EC866",
                     "url": "https://www.hackerrank.com/UselesssCat"
                 },
+                "leetcode": {
+                    "label": "leetCode",
+                    "labelColor": "24292E",
+                    "message": "uselessscat",
+                    "color": "F89F1B",
+                    "logo": "leetcode",
+                    "logoColor": "F89F1B",
+                    "url": "https://leetcode.com/uselessscat/"
+                },
                 "codersrank": {
                     "label": "CodersRank",
                     "labelColor": "24292E",
