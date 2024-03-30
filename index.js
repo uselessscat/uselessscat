@@ -1,15 +1,16 @@
 const Async = require('async');
 const Filesystem = require('fs').promises;
+const Path = require('path');
 
 const DotEnv = require('dotenv');
 const Handlebars = require('handlebars');
 const { Octokit } = require('@octokit/rest');
 const makeBadge = require('badge-maker/lib/make-badge');
+const icons = require('simple-icons');
 
 const badges = require('./data/badges.json');
 
 function generateMarkdown(data, template) {
-    console.log(data);
     const markdown = Handlebars.compile(template)(data);
 
     return markdown;
@@ -40,25 +41,25 @@ function summarizeResults(repositories) {
     const topics = {};
 
     // iterate over repositories topics
-    repositories.forEach(({ data: { names } }) => {
+    for (const { data: { names } } of repositories) {
         // add git topic by default ;)
         names.push('git');
 
         // add topics to the list
-        names.forEach((name) => {
+        for (const name of names) {
             if (name in topics) {
                 topics[name] += 1;
             } else {
                 topics[name] = 1;
             }
-        });
-    });
+        }
+    }
 
     return topics;
 }
 
 async function generateRepositoryResults() {
-    const cacheFilePath = './cache.json'
+    const cacheFilePath = 'cache.json'
     const cacheExpiration = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
 
     try {
@@ -105,18 +106,28 @@ async function generateRepositoryResults() {
     return summarizedTopics;
 }
 
-function fillRepositoriesPerTopic(badges, data) {
+function fillRepositoriesPerTopic(badges, topics) {
+    const missingRepos = new Set();
+    const unusedTopics = new Set(Object.keys(topics));
+
     for (const section of Object.keys(badges)) {
-        const topics = badges[section].elements;
+        const badgeTopics = badges[section].elements;
 
-        for (const key of Object.keys(topics)) {
-            const { topic } = topics[key];
+        for (const key of Object.keys(badgeTopics)) {
+            const { topic } = badgeTopics[key];
 
-            if (topic && topic in data) {
-                topics[key].message = `${data[key]} Repos`;
-            }
+            if (topic && topic in topics) {
+                badgeTopics[key].message = `${topics[key]} Repos`;
+
+                unusedTopics.delete(topic);
+            } else {
+                missingRepos.add(topic);
+                badgeTopics[key].message = '0 Repos';}
         }
     }
+
+    console.log('No repositories using:', [...missingRepos]);
+    console.log('No badges for:', [...unusedTopics]);
 }
 
 async function generateTemplateContents(badges) {
@@ -126,33 +137,45 @@ async function generateTemplateContents(badges) {
         const elements = badges[section].elements;
 
         // generate section badge
-        const filename = `./assets/badges/${section}.svg`;
+        const sectionFilename = Path.join('.', 'assets', 'badges', `${section}.svg`);
 
         contents[section] = {
             label: badges[section].message,
-            badge: filename,
+            badge: sectionFilename,
             elements: {},
         };
 
-        const badge = makeBadge({
+        const sectionBadge = makeBadge({
             label: '',
             message: badges[section].message,
-            color: badges[section].color,
+            color: badges[section].color || '#fff',
         });
-        await Filesystem.writeFile(filename, badge);
+        await Filesystem.writeFile(sectionFilename, sectionBadge);
 
         // generate elements badges
         for (const key of Object.keys(elements)) {
-            const filename = `./assets/badges/${section}_${key}.svg`;
-
-            const badge = makeBadge({
-                color: elements[key].color,
+            const filename = Path.join('.', 'assets', 'badges', `${section}_${key}.svg`);
+            const badgeData = {
+                color: elements[key].color || '#000',
                 label: elements[key].label,
-                labelColor: elements[key].labelColor,
-                logo: elements[key].logo,
-                logoColor: elements[key].logoColor,
+                labelColor: elements[key].labelColor || '#FCFCFC',
                 message: elements[key].message,
-            });
+            };
+
+            if (icons[elements[key].logo]) {
+                const icon = icons[elements[key].logo];
+                const color = elements[key].color || `#${icon.hex}`;
+                const logoColor = elements[key].logoColor || `#${icon.hex}`;
+                const encodedSvg = Buffer.from(icon.svg.replace('<svg', `<svg fill="${logoColor}"`)).toString('base64');
+
+                Object.assign(badgeData, {
+                    color,
+                    logo: `data:image/svg+xml;base64,${encodedSvg}`,
+                });
+            }
+
+            const badge = makeBadge(badgeData);
+
             await Filesystem.writeFile(filename, badge);
 
             contents[section].elements[key] = {
@@ -176,7 +199,7 @@ async function main() {
     const templateContents = await generateTemplateContents(badges);
 
     // load the template and write data
-    const template = (await Filesystem.readFile('./templates/readme.md.handlebars')).toString();
+    const template = (await Filesystem.readFile(Path.join('.', 'templates', 'readme.md.handlebars'))).toString();
     const markdown = generateMarkdown(templateContents, template);
 
     await Filesystem.writeFile('readme.md', markdown);

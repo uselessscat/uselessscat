@@ -1969,6 +1969,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"simple-icons@npm:^11.10.0":
+  version: 11.10.0
+  resolution: "simple-icons@npm:11.10.0"
+  checksum: 10c0/1d21195c116e318c103cd4da66107c6eb8cfe47b3496a43f55d243ae002c3c70a8353571a8a58cc0de9c69fb978f779a1125a0bbaeaf24822ac7427f0e047e69
+  languageName: node
+  linkType: hard
+
 "source-map@npm:^0.6.1":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
@@ -2188,6 +2195,7 @@ __metadata:
     eslint-plugin-node: "npm:^11.1.0"
     eslint-plugin-promise: "npm:^6.1.1"
     handlebars: "npm:^4.7.8"
+    simple-icons: "npm:^11.10.0"
   languageName: unknown
   linkType: soft
 

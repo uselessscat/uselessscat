@@ -1,112 +1,76 @@
 {
     "0_sociallinks": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "codersrank": {
-                "color": "67A4AC",
                 "label": "CodersRank",
-                "labelColor": "FCFCFC",
-                "logo": "codersrank",
-                "logoColor": "67A4AC",
+                "logo": "siCodersrank",
                 "message": "uselessscat",
                 "url": "https://profile.codersrank.io/user/uselessscat/"
             },
             "codewars": {
-                "color": "AD2C27",
                 "label": "Codewars",
-                "labelColor": "FCFCFC",
-                "logo": "codewars",
-                "logoColor": "AD2C27",
+                "logo": "siCodewars",
                 "message": "uselessscat",
                 "url": "https://www.codewars.com/users/uselessscat"
             },
             "codingame": {
-                "color": "F2BB13",
                 "label": "CodinGame",
-                "labelColor": "FCFCFC",
-                "logo": "codingame",
-                "logoColor": "F2BB13",
+                "logo": "siCodingame",
                 "message": "uselessscat",
                 "url": "https://www.codingame.com/profile/7523c6d6a87764f8b03cb0d42a9eefa27186793"
             },
             "exercism": {
-                "color": "009CAB",
                 "label": "Exercism",
-                "labelColor": "FCFCFC",
-                "logo": "exercism",
-                "logoColor": "",
+                "logo": "siExercism",
                 "message": "uselessscat",
                 "url": "https://exercism.org/profiles/uselessscat"
             },
             "github": {
-                "color": "181717",
                 "label": "Github",
-                "labelColor": "FCFCFC",
-                "logo": "github",
-                "logoColor": "181717",
+                "logo": "siGithub",
                 "message": "uselessscat",
                 "url": "https://github.com/uselessscat"
             },
             "hackerrank": {
-                "color": "2EC866",
                 "label": "HackerRank",
-                "labelColor": "FCFCFC",
-                "logo": "hackerrank",
-                "logoColor": "2EC866",
+                "logo": "siHackerrank",
                 "message": "UselesssCat",
                 "url": "https://www.hackerrank.com/UselesssCat"
             },
             "kattis": {
-                "color": "F29221",
                 "label": "Kattis",
-                "labelColor": "FCFCFC",
-                "logo": "kattis",
-                "logoColor": "F29221",
+                "logo": "siKattis",
                 "message": "uselessscat",
                 "url": "https://open.kattis.com/users/uselessscat"
             },
             "leetcode": {
-                "color": "F89F1B",
                 "label": "leetCode",
-                "labelColor": "FCFCFC",
-                "logo": "leetcode",
-                "logoColor": "F89F1B",
+                "logo": "siLeetcode",
                 "message": "uselessscat",
                 "url": "https://leetcode.com/uselessscat/"
             },
             "linkedin": {
-                "color": "0077B5",
                 "label": "LinkedIn",
-                "labelColor": "FCFCFC",
-                "logo": "linkedin",
-                "logoColor": "0077B5",
+                "logo": "siLinkedin",
                 "message": "ariecb",
                 "url": "https://www.linkedin.com/in/ariecb/"
             },
             "stackoverflow": {
-                "color": "FE7A16",
                 "label": "StackOverflow",
-                "labelColor": "FCFCFC",
-                "logo": "stackoverflow",
-                "logoColor": "FE7A16",
+                "logo": "siStackoverflow",
                 "message": "uselessscat",
                 "url": "https://stackoverflow.com/users/6658955/uselessscat"
             },
             "stackoverflow-es": {
-                "color": "FE7A16",
                 "label": "StackOverflow ES",
-                "labelColor": "FCFCFC",
-                "logo": "stackoverflow",
-                "logoColor": "FE7A16",
+                "logo": "siStackoverflow",
                 "message": "uselessscat",
                 "url": "https://es.stackoverflow.com/users/4617/uselessscat"
             },
             "telegram": {
-                "color": "2CA5E0",
                 "label": "Telegram",
-                "labelColor": "FCFCFC",
-                "logo": "telegram",
-                "logoColor": "",
+                "logo": "siTelegram",
                 "message": "@uselessscat",
                 "url": "https://www.t.me/uselessscat"
             }
@@ -114,158 +78,106 @@
         "message": "Social links"
     },
     "1_languages": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "assembler": {
-                "color": "007AAC",
                 "label": "Assembler",
-                "labelColor": "FCFCFC",
-                "logo": "assemblyscript",
-                "logoColor": "007AAC",
+                "logo": "siAssemblyscript",
                 "topic": "assembler",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:assembler"
             },
             "c": {
-                "color": "A8B9CC",
                 "label": "C",
-                "labelColor": "FCFCFC",
-                "logo": "c",
-                "logoColor": "",
+                "logo": "siC",
                 "topic": "c",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:c"
             },
             "clojure": {
-                "color": "5881D8",
                 "label": "Clojure",
-                "labelColor": "FCFCFC",
-                "logo": "clojure",
-                "logoColor": "",
+                "logo": "siClojure",
                 "topic": "clojure",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:clojure"
             },
             "csharp": {
-                "color": "512BD4",
                 "label": "C#",
-                "labelColor": "FCFCFC",
-                "logo": "c-sharp",
-                "logoColor": "512BD4",
+                "logo": "siCsharp",
                 "topic": "csharp",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:csharp"
             },
             "dart": {
-                "color": "0175C2",
                 "label": "Dart",
-                "labelColor": "FCFCFC",
-                "logo": "dart",
-                "logoColor": "0175C2",
+                "logo": "siDart",
                 "topic": "dart",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:dart"
             },
             "elixir": {
-                "color": "4B275F",
                 "label": "Elixir",
-                "labelColor": "FCFCFC",
-                "logo": "elixir",
-                "logoColor": "4B275F",
+                "logo": "siElixir",
                 "topic": "elixir",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:elixir"
             },
             "go": {
-                "color": "00ADD8",
                 "label": "Go",
-                "labelColor": "FCFCFC",
-                "logo": "go",
-                "logoColor": "",
+                "logo": "siGo",
                 "topic": "go",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:go"
             },
             "haskell": {
-                "color": "5D4F85",
                 "label": "Haskell",
-                "labelColor": "FCFCFC",
-                "logo": "haskell",
-                "logoColor": "5D4F85",
+                "logo": "siHaskell",
                 "topic": "haskell",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:haskell"
             },
             "java": {
-                "color": "007396",
                 "label": "Java",
-                "labelColor": "FCFCFC",
-                "logo": "",
-                "logoColor": "",
                 "topic": "java",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:java"
             },
             "javascript": {
-                "color": "F7DF1E",
                 "label": "Javascript",
-                "labelColor": "FCFCFC",
-                "logo": "javascript",
-                "logoColor": "",
+                "logo": "siJavascript",
                 "topic": "javascript",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:javascript"
             },
             "lua": {
-                "color": "2C2D72",
                 "label": "Lua",
-                "labelColor": "FCFCFC",
-                "logo": "lua",
-                "logoColor": "2C2D72",
+                "logo": "siLua",
                 "topic": "lua",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:lua"
             },
             "php": {
-                "color": "777BB4",
                 "label": "PHP",
-                "labelColor": "FCFCFC",
-                "logo": "php",
-                "logoColor": "777BB4",
+                "logo": "siPhp",
                 "topic": "php",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:php"
             },
             "python": {
-                "color": "3776AB",
                 "label": "Python",
-                "labelColor": "FCFCFC",
-                "logo": "python",
-                "logoColor": "",
+                "logo": "siPython",
                 "topic": "python",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:python"
             },
             "rust": {
-                "color": "000",
                 "label": "Rust",
-                "labelColor": "FCFCFC",
-                "logo": "rust",
-                "logoColor": "000",
+                "logo": "siRust",
                 "topic": "rust",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:rust"
             },
             "scala": {
-                "color": "DC322F",
                 "label": "Scala",
-                "labelColor": "FCFCFC",
-                "logo": "scala",
-                "logoColor": "DC322F",
+                "logo": "siScala",
                 "topic": "scala",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:scala"
             },
             "shell": {
-                "color": "FCC624",
                 "label": "Shell",
-                "labelColor": "FCFCFC",
-                "logo": "linux",
-                "logoColor": "000",
+                "logo": "siLinux",
                 "topic": "shell",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:shell"
             },
             "zig": {
-                "color": "F7A41D",
                 "label": "Zig",
-                "labelColor": "FCFCFC",
-                "logo": "zig",
-                "logoColor": "",
+                "logo": "siZig",
                 "topic": "zig",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:zig"
             }
@@ -273,95 +185,67 @@
         "message": "Languages"
     },
     "2_frameworks": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "fastapi": {
-                "color": "009688",
                 "label": "FastApi",
-                "labelColor": "FCFCFC",
-                "logo": "fastapi",
-                "logoColor": "",
+                "logo": "siFastapi",
                 "topic": "fastapi",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:fastapi"
             },
             "flask": {
-                "color": "111",
                 "label": "Flask",
-                "labelColor": "FCFCFC",
-                "logo": "flask",
-                "logoColor": "000",
+                "logo": "siFlask",
                 "topic": "flask",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:flask"
             },
             "laravel": {
-                "color": "FF2D20",
                 "label": "Laravel",
-                "labelColor": "FCFCFC",
-                "logo": "laravel",
-                "logoColor": "",
+                "logo": "siLaravel",
                 "topic": "laravel",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:laravel"
             },
             "lumen": {
-                "color": "E74430",
                 "label": "Lumen",
-                "labelColor": "FCFCFC",
-                "logo": "lumen",
-                "logoColor": "",
+                "logo": "siLumen",
                 "topic": "lumen",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:lumen"
             },
             "nodejs": {
-                "color": "339933",
                 "label": "Node Js",
-                "labelColor": "FCFCFC",
-                "logo": "node.js",
-                "logoColor": "",
+                "logo": "siNodedotjs",
                 "topic": "nodejs",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:nodejs"
             },
             "react": {
-                "color": "61DAFB",
                 "label": "React",
-                "labelColor": "FCFCFC",
-                "logo": "react",
-                "logoColor": "",
+                "logo": "siReact",
                 "topic": "react",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:react"
             },
             "serverless": {
-                "color": "FD5750",
                 "label": "Serverless",
-                "labelColor": "FCFCFC",
-                "logo": "serverless",
-                "logoColor": "",
+                "logo": "siServerless",
                 "topic": "serverless",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:serverless"
             },
             "spark": {
-                "color": "E25A1C",
                 "label": "Spark",
-                "labelColor": "FCFCFC",
-                "logo": "apachespark",
-                "logoColor": "",
+                "logo": "siApachespark",
                 "topic": "spark",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:spark"
             },
             "unity": {
-                "color": "111",
+                "color": "#000",
                 "label": "Unity",
-                "labelColor": "FCFCFC",
-                "logo": "unity",
-                "logoColor": "000",
+                "logo": "siUnity",
+                "logoColor": "#000000",
                 "topic": "unity",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:unity"
             },
             "vanilla": {
-                "color": "green",
                 "label": "Vanilla",
-                "labelColor": "FCFCFC",
-                "logo": "",
-                "logoColor": "",
+                "logo": "si",
                 "topic": "vanilla",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:vanilla"
             }
@@ -369,77 +253,53 @@
         "message": "Framework"
     },
     "3_data": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "elasticsearch": {
-                "color": "005571",
                 "label": "Elastic",
-                "labelColor": "FCFCFC",
-                "logo": "elasticsearch",
-                "logoColor": "005571",
+                "logo": "siElasticsearch",
                 "topic": "elasticsearch",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:elasticsearch"
             },
             "kafka": {
-                "color": "231F20",
                 "label": "Kafka",
-                "labelColor": "FCFCFC",
-                "logo": "apache-kafka",
-                "logoColor": "231F20",
+                "logo": "siApachekafka",
                 "topic": "kafka",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:kafka"
             },
             "mongodb": {
-                "color": "47A248",
                 "label": "MongoDB",
-                "labelColor": "FCFCFC",
-                "logo": "mongodb",
-                "logoColor": "",
+                "logo": "siMongodb",
                 "topic": "mongodb",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:mongodb"
             },
             "mysql": {
-                "color": "4479A1",
                 "label": "MySQL",
-                "labelColor": "FCFCFC",
-                "logo": "mysql",
-                "logoColor": "",
+                "logo": "siMysql",
                 "topic": "mysql",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:mysql"
             },
             "neo4j": {
-                "color": "4581C3",
                 "label": "Neo4j",
-                "labelColor": "FCFCFC",
-                "logo": "neo4j",
-                "logoColor": "",
+                "logo": "siNeo4j",
                 "topic": "neo4j",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:neo4j"
             },
             "nifi": {
-                "color": "728e9b",
                 "label": "Nifi",
-                "labelColor": "FCFCFC",
-                "logo": "",
-                "logoColor": "",
+                "logo": "si",
                 "topic": "nifi",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:nifi"
             },
             "postgresql": {
-                "color": "336791",
                 "label": "PostgreSql",
-                "labelColor": "FCFCFC",
-                "logo": "postgresql",
-                "logoColor": "336791",
+                "logo": "siPostgresql",
                 "topic": "postgresql",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:postgresql"
             },
             "redis": {
-                "color": "DC382D",
                 "label": "Redis",
-                "labelColor": "FCFCFC",
-                "logo": "redis",
-                "logoColor": "",
+                "logo": "siRedis",
                 "topic": "redis",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:redis"
             }
@@ -447,41 +307,29 @@
         "message": "Data"
     },
     "4_envsandtools": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "git": {
-                "color": "F05032",
                 "label": "Git",
-                "labelColor": "FCFCFC",
-                "logo": "git",
-                "logoColor": "",
+                "logo": "siGit",
                 "topic": "git",
                 "url": "https://github.com/search?q=user:uselessscat"
             },
             "githubactions": {
-                "color": "2088FF",
                 "label": "GitHub Actions",
-                "labelColor": "FCFCFC",
-                "logo": "github-actions",
-                "logoColor": "",
+                "logo": "siGithubactions",
                 "topic": "githubactions",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:githubactions"
             },
             "openapi": {
-                "color": "6BA539",
                 "label": "OpenAPI",
-                "labelColor": "FCFCFC",
-                "logo": "openapi-initiative",
-                "logoColor": "",
+                "logo": "siOpenapi-initiative",
                 "topic": "openapi",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:openapi"
             },
             "vscode": {
-                "color": "007ACC",
                 "label": "Visual Studio Code",
-                "labelColor": "FCFCFC",
-                "logo": "visual-studio-code",
-                "logoColor": "007ACC",
+                "logo": "siVisualstudiocode",
                 "topic": "vscode",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:vscode"
             }
@@ -489,59 +337,41 @@
         "message": "Envs & Tools"
     },
     "5_platforms": {
-        "color": "FCFCFC",
+        "color": "#FCFCFC",
         "elements": {
             "arduino": {
-                "color": "00878F",
                 "label": "Arduino",
-                "labelColor": "FCFCFC",
-                "logo": "arduino",
-                "logoColor": "00878F",
+                "logo": "siArduino",
                 "topic": "arduino",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:arduino"
             },
             "aws": {
-                "color": "232F3E",
                 "label": "AWS",
-                "labelColor": "FCFCFC",
-                "logo": "amazon-aws",
-                "logoColor": "232F3E",
+                "logo": "siAmazonaws",
                 "topic": "aws",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:aws"
             },
             "debian": {
-                "color": "A81D33",
                 "label": "Debian",
-                "labelColor": "FCFCFC",
-                "logo": "debian",
-                "logoColor": "A81D33",
+                "logo": "siDebian",
                 "topic": "debian",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:debian"
             },
             "docker": {
-                "color": "2496ED",
                 "label": "Docker",
-                "labelColor": "FCFCFC",
-                "logo": "docker",
-                "logoColor": "",
+                "logo": "siDocker",
                 "topic": "docker",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:docker"
             },
             "kubernetes": {
-                "color": "326CE5",
                 "label": "Kubernetes",
-                "labelColor": "FCFCFC",
-                "logo": "kubernetes",
-                "logoColor": "",
+                "logo": "siKubernetes",
                 "topic": "kubernetes",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:kubernetes"
             },
             "raspberrypi": {
-                "color": "C51A4A",
                 "label": "Raspberry",
-                "labelColor": "FCFCFC",
-                "logo": "raspberry-pi",
-                "logoColor": "C51A4A",
+                "logo": "siRaspberrypi",
                 "topic": "raspberrypi",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:raspberrypi"
             }
