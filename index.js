@@ -1,38 +1,36 @@
-const Async = require('async');
-const Filesystem = require('fs').promises;
-const Path = require('path');
+const asyncLib = require('async');
+const fsPromises = require('fs').promises;
+const pathLib = require('path');
 
-const DotEnv = require('dotenv');
-const Handlebars = require('handlebars');
+const dotenv = require('dotenv');
+const handlebars = require('handlebars');
 const { Octokit } = require('@octokit/rest');
 const makeBadge = require('badge-maker/lib/make-badge');
-const icons = require('simple-icons');
+const simpleIcons = require('simple-icons');
 
-const badges = require('./data/badges.json');
+const badgeData = require('./data/badges.json');
 
-// load environment
-DotEnv.config();
+// Load environment variables
+dotenv.config();
 
-const COLOR = process.env.COLOR || '#000';
-const LABEL_COLOR = process.env.LABEL_COLOR || '#FCFCFC';
+const DEFAULT_COLOR = process.env.COLOR || '#000';
+const DEFAULT_LABEL_COLOR = process.env.LABEL_COLOR || '#FCFCFC';
 
-async function removeAllSvgFiles(folder) {
-    const files = await Filesystem.readdir(folder);
+async function deleteSvgFilesInFolder(targetFolder) {
+    const filesInFolder = await fsPromises.readdir(targetFolder);
 
-    for (const file of files) {
-        if (file.endsWith('.svg')) {
-            await Filesystem.unlink(Path.join(folder, file));
+    for (const fileName of filesInFolder) {
+        if (fileName.endsWith('.svg')) {
+            await fsPromises.unlink(pathLib.join(targetFolder, fileName));
         }
     }
 }
 
-function generateMarkdown(data, template) {
-    const markdown = Handlebars.compile(template)(data);
-
-    return markdown;
+function createMarkdownFromTemplate(templateData, markdownTemplate) {
+    return handlebars.compile(markdownTemplate)(templateData);
 }
 
-async function getRepositoryList(octokit) {
+async function fetchUserRepositories(octokit) {
     return octokit.paginate(
         octokit.rest.repos.listForAuthenticatedUser,
         {
@@ -42,248 +40,221 @@ async function getRepositoryList(octokit) {
     );
 }
 
-async function getRepositoryTopics(octokit, path) {
-    const [owner, repo] = path.split('/');
+async function fetchRepositoryTopics(octokit, repoIdentifier) {
+    const [owner, repo] = repoIdentifier.split('/');
 
-    const response = octokit.rest.repos.getAllTopics({
+    return octokit.rest.repos.getAllTopics({
         owner,
-        repo,
+        repo: repo,
     });
-
-    return response;
 }
 
-function summarizeResults(repositories) {
-    const topics = {};
+function compileTopicSummary(repositories) {
+    const topicCounts = {};
 
-    // iterate over repositories topics
-    for (const { data: { names } } of repositories) {
-        // add git topic by default ;)
-        names.push('git');
+    for (const { data: { names: topicNames } } of repositories) {
+        topicNames.push('git'); // Add 'git' topic by default
 
-        // add topics to the list
-        for (const name of names) {
-            if (name in topics) {
-                topics[name] += 1;
-            } else {
-                topics[name] = 1;
-            }
+        for (const topicName of topicNames) {
+            topicCounts[topicName] = (topicCounts[topicName] || 0) + 1;
         }
     }
 
-    return topics;
+    return topicCounts;
 }
 
-async function getCached(cacheFilePath) {
-    const cacheExpiration = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+async function readOrGenerateCachedData(cacheFile) {
+    const WEEK_IN_MS = 7 * 24 * 60 * 60 * 1000;
 
     try {
-        const cacheStats = await Filesystem.stat(cacheFilePath);
+        const fileStats = await fsPromises.stat(cacheFile);
 
-        if (Date.now() - cacheStats.mtimeMs < cacheExpiration) {
-            // Cache is still valid, read from cache file
-            const cacheData = await Filesystem.readFile(cacheFilePath);
-
-            // eslint-disable-next-line no-console
-            console.log('Cache file exists and is still valid, reading from cache');
-
-            return JSON.parse(cacheData);
+        if (Date.now() - fileStats.mtimeMs < WEEK_IN_MS) {
+            const cachedContent = await fsPromises.readFile(cacheFile);
+            console.log(`Using valid cache data from ${cacheFile}.`);
+            return JSON.parse(cachedContent);
         }
     } catch (error) {
-        // Cache file does not exist or error occurred, continue with generating results
-        // eslint-disable-next-line no-console
-        console.log('Cache file does not exist or expired, generating new results');
+        console.log('Cache not found or expired, generating new data.');
     }
 }
 
-async function generateRepositoryResults(octokit) {
-    const cacheFilePath = 'bagdes.cache.json'
-    const cachedResults = await getCached(cacheFilePath);
+async function generateRepoTopicSummary(octokit) {
+    const cacheFile = 'badges.cache.json';
+    const cachedSummary = await readOrGenerateCachedData(cacheFile);
 
-    if (cachedResults) {
-        return cachedResults;
+    if (cachedSummary) {
+        return cachedSummary;
     }
 
-    const repositories = await getRepositoryList(octokit);
+    const userRepos = await fetchUserRepositories(octokit);
+    const repoIdentifiers = userRepos.map((repository) => repository.full_name);
 
-    // get the full names only
-    const paths = repositories.map((repository) => repository.full_name);
-
-    // get all the topic for each repo
-    const fullRepositories = await Async.mapLimit(
-        paths, // the collection to iterate over
-        100, // max async ops at a time, secondary gh rate limit
-        async (path) => getRepositoryTopics(octokit, path),
+    const repoTopics = await asyncLib.mapLimit(
+        repoIdentifiers,
+        100,
+        async (repoId) => fetchRepositoryTopics(octokit, repoId),
     );
 
-    const summarizedTopics = summarizeResults(fullRepositories);
+    const topicSummary = compileTopicSummary(repoTopics);
+    await fsPromises.writeFile(cacheFile, JSON.stringify(topicSummary));
 
-    // Write results to cache file
-    await Filesystem.writeFile(cacheFilePath, JSON.stringify(summarizedTopics));
-
-    return summarizedTopics;
+    return topicSummary;
 }
 
-async function searchForRepositories(octokit, query) {
+async function searchRepositories(octokit, searchQuery) {
     return octokit.paginate(
         octokit.rest.search.repos,
         {
-            q: query,
+            q: searchQuery,
             per_page: 100,
         },
     );
 }
 
-async function getPinnedRepositories(octokit) {
-    const cacheFilePath = 'pinned.cache.json';
-    const cachedResults = await getCached(cacheFilePath);
+async function getPinnedRepoBadges(octokit) {
+    const cacheFile = 'pinned.cache.json';
+    const cachedPinnedRepos = await readOrGenerateCachedData(cacheFile);
 
-    if (cachedResults) {
-        return cachedResults;
+    if (cachedPinnedRepos) {
+        return cachedPinnedRepos;
     }
 
-    const results = await searchForRepositories(octokit, 'user:uselessscat topic:pinned');
+    const searchResults = await searchRepositories(octokit, 'user:uselessscat topic:pinned');
+    const pinnedFolderPath = pathLib.join('.', 'assets', 'pinned');
+    await deleteSvgFilesInFolder(pinnedFolderPath);
 
-    // remove all svg files inside the pinned folder
-    const pinnedFolder = Path.join('.', 'assets', 'pinned');
-    await removeAllSvgFiles(pinnedFolder);
+    const pinnedRepos = [];
 
-    const pinned = [];
-
-    for (const { name, html_url } of results) {
-        const filename = Path.join(pinnedFolder, `${name}.svg`);
-
-        pinned.push({
+    for (const { name, html_url } of searchResults) {
+        const badgeFilePath = pathLib.join(pinnedFolderPath, `${name}.svg`);
+        pinnedRepos.push({
             name,
             url: html_url,
-            badge: filename,
+            badge: badgeFilePath,
         });
 
-        const badge = makeBadge({
+        const repoBadge = makeBadge({
             label: '',
             message: name,
-            color: LABEL_COLOR,
+            color: DEFAULT_LABEL_COLOR,
         });
 
-        await Filesystem.writeFile(filename, badge);
+        await fsPromises.writeFile(badgeFilePath, repoBadge);
     }
 
-    pinned.sort((a, b) => a.name.localeCompare(b.name));
+    pinnedRepos.sort((a, b) => a.name.localeCompare(b.name));
+    await fsPromises.writeFile(cacheFile, JSON.stringify(pinnedRepos));
 
-    await Filesystem.writeFile(cacheFilePath, JSON.stringify(pinned));
-
-    return pinned;
+    return pinnedRepos;
 }
 
-function fillRepositoriesPerTopic(badges, topics) {
-    const missingRepos = new Set();
-    const unusedTopics = new Set(Object.keys(topics));
+function updateBadgeMessages(badgeConfig, repositoryTopics) {
+    const missingRepositories = new Set();
+    const unusedTopics = new Set(Object.keys(repositoryTopics));
 
-    for (const section of Object.keys(badges)) {
-        const badgeTopics = badges[section].elements;
+    for (const section of Object.keys(badgeConfig)) {
+        const sectionTopics = badgeConfig[section].elements;
 
-        for (const key of Object.keys(badgeTopics)) {
-            const { topic } = badgeTopics[key];
+        for (const key of Object.keys(sectionTopics)) {
+            const topicName = sectionTopics[key].topic;
 
-            if (topic && topic in topics) {
-                badgeTopics[key].message = `${topics[key]} Repos`;
-
-                unusedTopics.delete(topic);
+            if (topicName && topicName in repositoryTopics) {
+                sectionTopics[key].message = `${repositoryTopics[topicName]} Repos`;
+                unusedTopics.delete(topicName);
             } else {
-                missingRepos.add(topic);
-                badgeTopics[key].message = '0 Repos';
+                missingRepositories.add(topicName);
+                sectionTopics[key].message = '0 Repos';
             }
         }
     }
 
-    console.log('No repositories using:', [...missingRepos].sort());
-    console.log('No badges for:', [...unusedTopics].sort());
+    console.log('No repositories for topics:', [...missingRepositories].sort());
+    console.log('Unused topics:', [...unusedTopics].sort());
 }
 
-async function generateBadges(badges) {
-    let contents = {};
+async function createBadgesForConfig(badgeConfig) {
+    const badgeDirectory = pathLib.join('.', 'assets', 'badges');
+    await deleteSvgFilesInFolder(badgeDirectory);
 
-    // remove all svg files inside the badges folder
-    const badgesFolder = Path.join('.', 'assets', 'badges');
-    await removeAllSvgFiles(badgesFolder);
+    const badgesContent = {};
 
-    for (const section of Object.keys(badges)) {
-        const elements = badges[section].elements;
+    for (const section of Object.keys(badgeConfig)) {
+        const sectionElements = badgeConfig[section].elements;
+        const sectionBadgePath = pathLib.join(badgeDirectory, `${section}.svg`);
 
-        // generate section badge
-        const sectionFilename = Path.join(badgesFolder, `${section}.svg`);
-
-        contents[section] = {
-            label: badges[section].message,
-            badge: sectionFilename,
+        badgesContent[section] = {
+            label: badgeConfig[section].message,
+            badge: sectionBadgePath,
             elements: {},
         };
 
         const sectionBadge = makeBadge({
             label: '',
-            message: badges[section].message,
-            color: badges[section].color || COLOR,
+            message: badgeConfig[section].message,
+            color: badgeConfig[section].color || DEFAULT_COLOR,
         });
-        await Filesystem.writeFile(sectionFilename, sectionBadge);
+        await fsPromises.writeFile(sectionBadgePath, sectionBadge);
 
         // generate elements badges
-        for (const key of Object.keys(elements)) {
-            const filename = Path.join(badgesFolder, `${section}_${key}.svg`);
-            const badgeData = {
-                color: elements[key].color || COLOR,
-                label: elements[key].label,
-                labelColor: elements[key].labelColor || LABEL_COLOR,
-                message: elements[key].message,
+        for (const elementKey of Object.keys(sectionElements)) {
+            const elementConfig = sectionElements[elementKey];
+            const elementBadgePath = pathLib.join(badgeDirectory, `${section}_${elementKey}.svg`);
+
+            const badgeOptions = {
+                label: elementConfig.label,
+                labelColor: elementConfig.labelColor || DEFAULT_LABEL_COLOR,
+                message: elementConfig.message,
             };
 
-            if (icons[elements[key].logo]) {
-                const icon = icons[elements[key].logo];
-                const color = elements[key].color || `#${icon.hex}`;
-                const logoColor = elements[key].logoColor || `#${icon.hex}`;
-                const encodedSvg = Buffer.from(icon.svg.replace('<svg', `<svg fill="${logoColor}"`)).toString('base64');
+            if (simpleIcons[elementConfig.logo]) {
+                const icon = simpleIcons[elementConfig.logo];
+                const color = elementConfig.color || `#${icon.hex}`;
+                const logoColor = elementConfig.logoColor || `#${icon.hex}`;
+                const encodedSvg = Buffer.from(
+                    icon.svg.replace('<svg', `<svg fill="${logoColor}"`)
+                ).toString('base64');
 
-                Object.assign(badgeData, {
+                Object.assign(badgeOptions, {
                     color,
                     logo: `data:image/svg+xml;base64,${encodedSvg}`,
                 });
+            } else {
+                badgeOptions.color = elementConfig.color || DEFAULT_COLOR;
             }
 
-            const badge = makeBadge(badgeData);
+            const elementBadge = makeBadge(badgeOptions);
+            await fsPromises.writeFile(elementBadgePath, elementBadge);
 
-            await Filesystem.writeFile(filename, badge);
-
-            contents[section].elements[key] = {
-                badge: filename,
-                label: elements[key].label,
-                url: elements[key].url,
+            badgesContent[section].elements[elementKey] = {
+                badge: elementBadgePath,
+                label: elementConfig.label,
+                url: elementConfig.url,
             };
         }
     }
 
-    return contents;
+    return badgesContent;
 }
 
 async function main() {
-    // Create the octokit instances to interact with github
     const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-    const summarizedTopics = await generateRepositoryResults(octokit);
+    const repoTopicsSummary = await generateRepoTopicSummary(octokit);
+    console.log(repoTopicsSummary);
 
-    // eslint-disable-next-line no-console
-    console.log(summarizedTopics);
+    updateBadgeMessages(badgeData, repoTopicsSummary);
 
-    fillRepositoriesPerTopic(badges, summarizedTopics);
+    const generatedBadgesContent = await createBadgesForConfig(badgeData);
 
-    const templateContents = {
-        badges: await generateBadges(badges),
-        pinned: await getPinnedRepositories(octokit),
-    }
+    const readmeTemplatePath = pathLib.join('.', 'templates', 'readme.md.handlebars');
+    const readmeTemplate = (await fsPromises.readFile(readmeTemplatePath)).toString();
+    const readmeContent = createMarkdownFromTemplate({
+        badges: generatedBadgesContent,
+        pinned: await getPinnedRepoBadges(octokit)
+    }, readmeTemplate);
 
-    // load the template and write data
-    const template = (await Filesystem.readFile(Path.join('.', 'templates', 'readme.md.handlebars'))).toString();
-    const markdown = generateMarkdown(templateContents, template);
-
-    await Filesystem.writeFile('readme.md', markdown);
+    await fsPromises.writeFile('README.md', readmeContent);
 }
 
 main();
