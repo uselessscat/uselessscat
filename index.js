@@ -164,7 +164,6 @@ function updateBadgeMessages(badgeConfig, repositoryTopics) {
                 unusedTopics.delete(topicName);
             } else {
                 missingRepositories.add(topicName);
-                sectionTopics[key].message = '0 Repos';
             }
         }
     }
