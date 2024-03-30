@@ -10,6 +10,22 @@ const icons = require('simple-icons');
 
 const badges = require('./data/badges.json');
 
+// load environment
+DotEnv.config();
+
+const COLOR = process.env.COLOR || '#000';
+const LABEL_COLOR = process.env.LABEL_COLOR || '#FCFCFC';
+
+async function removeAllSvgFiles(folder) {
+    const files = await Filesystem.readdir(folder);
+
+    for (const file of files) {
+        if (file.endsWith('.svg')) {
+            await Filesystem.unlink(Path.join(folder, file));
+        }
+    }
+}
+
 function generateMarkdown(data, template) {
     const markdown = Handlebars.compile(template)(data);
 
@@ -58,8 +74,7 @@ function summarizeResults(repositories) {
     return topics;
 }
 
-async function generateRepositoryResults() {
-    const cacheFilePath = 'cache.json'
+async function getCached(cacheFilePath) {
     const cacheExpiration = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
 
     try {
@@ -77,14 +92,17 @@ async function generateRepositoryResults() {
     } catch (error) {
         // Cache file does not exist or error occurred, continue with generating results
         // eslint-disable-next-line no-console
-        console.log(error, 'Cache file does not exist or expired, generating new results');
+        console.log('Cache file does not exist or expired, generating new results');
     }
+}
 
-    // load environment
-    DotEnv.config();
+async function generateRepositoryResults(octokit) {
+    const cacheFilePath = 'bagdes.cache.json'
+    const cachedResults = await getCached(cacheFilePath);
 
-    // Create the octokit instances to interact with github
-    const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+    if (cachedResults) {
+        return cachedResults;
+    }
 
     const repositories = await getRepositoryList(octokit);
 
@@ -106,6 +124,57 @@ async function generateRepositoryResults() {
     return summarizedTopics;
 }
 
+async function searchForRepositories(octokit, query) {
+    return octokit.paginate(
+        octokit.rest.search.repos,
+        {
+            q: query,
+            per_page: 100,
+        },
+    );
+}
+
+async function getPinnedRepositories(octokit) {
+    const cacheFilePath = 'pinned.cache.json';
+    const cachedResults = await getCached(cacheFilePath);
+
+    if (cachedResults) {
+        return cachedResults;
+    }
+
+    const results = await searchForRepositories(octokit, 'user:uselessscat topic:pinned');
+
+    // remove all svg files inside the pinned folder
+    const pinnedFolder = Path.join('.', 'assets', 'pinned');
+    await removeAllSvgFiles(pinnedFolder);
+
+    const pinned = [];
+
+    for (const { name, html_url } of results) {
+        const filename = Path.join(pinnedFolder, `${name}.svg`);
+
+        pinned.push({
+            name,
+            url: html_url,
+            badge: filename,
+        });
+
+        const badge = makeBadge({
+            label: '',
+            message: name,
+            color: LABEL_COLOR,
+        });
+
+        await Filesystem.writeFile(filename, badge);
+    }
+
+    pinned.sort((a, b) => a.name.localeCompare(b.name));
+
+    await Filesystem.writeFile(cacheFilePath, JSON.stringify(pinned));
+
+    return pinned;
+}
+
 function fillRepositoriesPerTopic(badges, topics) {
     const missingRepos = new Set();
     const unusedTopics = new Set(Object.keys(topics));
@@ -122,22 +191,27 @@ function fillRepositoriesPerTopic(badges, topics) {
                 unusedTopics.delete(topic);
             } else {
                 missingRepos.add(topic);
-                badgeTopics[key].message = '0 Repos';}
+                badgeTopics[key].message = '0 Repos';
+            }
         }
     }
 
-    console.log('No repositories using:', [...missingRepos]);
-    console.log('No badges for:', [...unusedTopics]);
+    console.log('No repositories using:', [...missingRepos].sort());
+    console.log('No badges for:', [...unusedTopics].sort());
 }
 
-async function generateTemplateContents(badges) {
+async function generateBadges(badges) {
     let contents = {};
+
+    // remove all svg files inside the badges folder
+    const badgesFolder = Path.join('.', 'assets', 'badges');
+    await removeAllSvgFiles(badgesFolder);
 
     for (const section of Object.keys(badges)) {
         const elements = badges[section].elements;
 
         // generate section badge
-        const sectionFilename = Path.join('.', 'assets', 'badges', `${section}.svg`);
+        const sectionFilename = Path.join(badgesFolder, `${section}.svg`);
 
         contents[section] = {
             label: badges[section].message,
@@ -148,17 +222,17 @@ async function generateTemplateContents(badges) {
         const sectionBadge = makeBadge({
             label: '',
             message: badges[section].message,
-            color: badges[section].color || '#fff',
+            color: badges[section].color || COLOR,
         });
         await Filesystem.writeFile(sectionFilename, sectionBadge);
 
         // generate elements badges
         for (const key of Object.keys(elements)) {
-            const filename = Path.join('.', 'assets', 'badges', `${section}_${key}.svg`);
+            const filename = Path.join(badgesFolder, `${section}_${key}.svg`);
             const badgeData = {
-                color: elements[key].color || '#000',
+                color: elements[key].color || COLOR,
                 label: elements[key].label,
-                labelColor: elements[key].labelColor || '#FCFCFC',
+                labelColor: elements[key].labelColor || LABEL_COLOR,
                 message: elements[key].message,
             };
 
@@ -190,13 +264,20 @@ async function generateTemplateContents(badges) {
 }
 
 async function main() {
-    const summarizedTopics = await generateRepositoryResults();
+    // Create the octokit instances to interact with github
+    const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+
+    const summarizedTopics = await generateRepositoryResults(octokit);
 
     // eslint-disable-next-line no-console
     console.log(summarizedTopics);
 
     fillRepositoriesPerTopic(badges, summarizedTopics);
-    const templateContents = await generateTemplateContents(badges);
+
+    const templateContents = {
+        badges: await generateBadges(badges),
+        pinned: await getPinnedRepositories(octokit),
+    }
 
     // load the template and write data
     const template = (await Filesystem.readFile(Path.join('.', 'templates', 'readme.md.handlebars'))).toString();

@@ -1,17 +1,14 @@
-{{~#*inline "image"}}![{{#if label}}{{label}}{{^~}}{{message}}{{/if}}]({{badge}}){{~/inline}}
-{{~#*inline "image_link"}}[{{>image this}}]({{url}}){{~/inline}}{{!
-here starts the md
-}}## Badges 😀
+## Badges 😀
 
-{{#each @root}}
-{{>image this}}
-
+{{#each badges}}
+![{{#if label}}{{label}}{{^~}}{{message}}{{/if}}]({{badge}})
 {{#each elements ~}}
-{{>image_link this}}
-
+[![{{#if label}}{{label}}{{^~}}{{message}}{{/if}}]({{badge}})]({{url}})
 {{/each}}
 
 {{/each}}
-## Links
+## Pinned
 
-- [Pinned Repositories](https://github.com/search?q=user:uselessscat%20topic:pinned)
+{{#each pinned}}
+[![{{name}}]({{badge}})]({{url}})
+{{/each}}
