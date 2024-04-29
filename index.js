@@ -7,6 +7,9 @@ const handlebars = require('handlebars');
 const { Octokit } = require('@octokit/rest');
 const makeBadge = require('badge-maker/lib/make-badge');
 const simpleIcons = require('simple-icons');
+const fontawesome = require('@fortawesome/fontawesome-svg-core');
+const fontAwesomeIcons = require('@fortawesome/free-solid-svg-icons');
+const fontAwesomeBrandIcons = require('@fortawesome/free-brands-svg-icons');
 
 const badgeData = require('./data/badges.json');
 
@@ -19,11 +22,15 @@ const DEFAULT_LABEL_COLOR = process.env.LABEL_COLOR || '#FCFCFC';
 async function deleteSvgFilesInFolder(targetFolder) {
     const filesInFolder = await fsPromises.readdir(targetFolder);
 
+    const results = [];
+
     for (const fileName of filesInFolder) {
         if (fileName.endsWith('.svg')) {
-            await fsPromises.unlink(pathLib.join(targetFolder, fileName));
+            results.push(fsPromises.unlink(pathLib.join(targetFolder, fileName)));
         }
     }
+
+    await Promise.all(results);
 }
 
 function createMarkdownFromTemplate(templateData, markdownTemplate) {
@@ -45,7 +52,7 @@ async function fetchRepositoryTopics(octokit, repoIdentifier) {
 
     return octokit.rest.repos.getAllTopics({
         owner,
-        repo: repo,
+        repo,
     });
 }
 
@@ -74,7 +81,7 @@ async function readOrGenerateCachedData(cacheFile) {
             console.log(`Using valid cache data from ${cacheFile}.`);
             return JSON.parse(cachedContent);
         }
-    } catch (error) {
+    } catch {
         console.log('Cache not found or expired, generating new data.');
     }
 }
@@ -126,11 +133,11 @@ async function getPinnedRepoBadges(octokit) {
 
     const pinnedRepos = [];
 
-    for (const { name, html_url } of searchResults) {
+    for (const { name, html_url: htmlUrl } of searchResults) {
         const badgeFilePath = pathLib.join(pinnedFolderPath, `${name}.svg`);
         pinnedRepos.push({
             name,
-            url: html_url,
+            url: htmlUrl,
             badge: badgeFilePath,
         });
 
@@ -176,6 +183,62 @@ function updateBadgeMessages(badgeConfig, repositoryTopics) {
     console.log('Unused topics:', [...unusedTopics].sort());
 }
 
+async function generateBadge(badgeConfig, badgePath) {
+    let logoData;
+
+    if (badgeConfig.logo) {
+        logoData = await getLogoData(badgeConfig.logo, badgeConfig.logoColor);
+    }
+
+    const badgeOptions = {
+        label: badgeConfig.label,
+        message: badgeConfig.message,
+        color: badgeConfig.color,
+        logo: logoData,
+        labelColor: badgeConfig.labelColor,
+    };
+
+    const badge = makeBadge(badgeOptions);
+    await fsPromises.writeFile(badgePath, badge);
+
+    return badgePath;
+}
+
+async function getLogoData(logoKey, logoColor) {
+    if (logoKey.startsWith('si') && simpleIcons[logoKey]) {
+        const icon = simpleIcons[logoKey];
+        const color = logoColor || `#${icon.hex}`;
+
+        const encodedSvg = Buffer.from(
+            icon.svg.replace('<svg', `<svg fill="${color}"`),
+        ).toString('base64');
+
+        return `data:image/svg+xml;base64,${encodedSvg}`;
+    } else if (logoKey.startsWith('fa') && fontAwesomeIcons[logoKey]) {
+        const icon = fontAwesomeIcons[logoKey];
+        const color = logoColor || DEFAULT_COLOR;
+
+        const iconSvg = fontawesome.icon(icon).html[0];
+        const encodedSvg = Buffer.from(
+            iconSvg.replace('<svg', `<svg fill="${color}"`),
+        ).toString('base64');
+
+        return `data:image/svg+xml;base64,${encodedSvg}`;
+    } else if (logoKey.startsWith('fab') && fontAwesomeBrandIcons[logoKey.replace('fab', 'fa')]) {
+        const icon = fontAwesomeBrandIcons[logoKey.replace('fab', 'fa')];
+        const color = logoColor || DEFAULT_COLOR;
+
+        const iconSvg = fontawesome.icon(icon).html[0];
+        const encodedSvg = Buffer.from(
+            iconSvg.replace('<svg', `<svg fill="${color}"`),
+        ).toString('base64');
+
+        return `data:image/svg+xml;base64,${encodedSvg}`;
+    }
+
+    return undefined;
+}
+
 async function createBadgesForConfig(badgeConfig) {
     const badgeDirectory = pathLib.join('.', 'assets', 'badges');
     await deleteSvgFilesInFolder(badgeDirectory);
@@ -186,48 +249,36 @@ async function createBadgesForConfig(badgeConfig) {
         const sectionElements = badgeConfig[section].elements;
         const sectionBadgePath = pathLib.join(badgeDirectory, `${section}.svg`);
 
+        const sectionBadgeConfig = {
+            label: '',
+            message: badgeConfig[section].message,
+            color: badgeConfig[section].color || DEFAULT_COLOR,
+            logo: badgeConfig[section].logo,
+        };
+
+        await generateBadge(sectionBadgeConfig, sectionBadgePath);
+
         badgesContent[section] = {
             label: badgeConfig[section].message,
             badge: sectionBadgePath,
             elements: {},
         };
 
-        const sectionBadge = makeBadge({
-            label: '',
-            message: badgeConfig[section].message,
-            color: badgeConfig[section].color || DEFAULT_COLOR,
-        });
-        await fsPromises.writeFile(sectionBadgePath, sectionBadge);
-
         // generate elements badges
         for (const elementKey of Object.keys(sectionElements)) {
             const elementConfig = sectionElements[elementKey];
             const elementBadgePath = pathLib.join(badgeDirectory, `${section}_${elementKey}.svg`);
 
-            const badgeOptions = {
+            const elementBadgeConfig = {
                 label: elementConfig.label,
-                labelColor: elementConfig.labelColor || DEFAULT_LABEL_COLOR,
                 message: elementConfig.message,
+                color: elementConfig.color || DEFAULT_COLOR,
+                logo: elementConfig.logo,
+                logoColor: elementConfig.logoColor,
+                labelColor: elementConfig.labelColor || DEFAULT_LABEL_COLOR,
             };
 
-            if (simpleIcons[elementConfig.logo]) {
-                const icon = simpleIcons[elementConfig.logo];
-                const color = elementConfig.color || `#${icon.hex}`;
-                const logoColor = elementConfig.logoColor || `#${icon.hex}`;
-                const encodedSvg = Buffer.from(
-                    icon.svg.replace('<svg', `<svg fill="${logoColor}"`)
-                ).toString('base64');
-
-                Object.assign(badgeOptions, {
-                    color,
-                    logo: `data:image/svg+xml;base64,${encodedSvg}`,
-                });
-            } else {
-                badgeOptions.color = elementConfig.color || DEFAULT_COLOR;
-            }
-
-            const elementBadge = makeBadge(badgeOptions);
-            await fsPromises.writeFile(elementBadgePath, elementBadge);
+            await generateBadge(elementBadgeConfig, elementBadgePath);
 
             badgesContent[section].elements[elementKey] = {
                 badge: elementBadgePath,
@@ -254,7 +305,7 @@ async function main() {
     const readmeTemplate = (await fsPromises.readFile(readmeTemplatePath)).toString();
     const readmeContent = createMarkdownFromTemplate({
         badges: generatedBadgesContent,
-        pinned: await getPinnedRepoBadges(octokit)
+        pinned: await getPinnedRepoBadges(octokit),
     }, readmeTemplate);
 
     await fsPromises.writeFile('README.md', readmeContent);
