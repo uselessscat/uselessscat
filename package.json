@@ -4,10 +4,10 @@
   "description": "Personal repository",
   "author": "uselessscat",
   "main": "index.js",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "bun@1.1.30",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "bun run index.js"
   },
   "homepage": "https://github.com/uselessscat/uselessscat#readme",
   "repository": {
@@ -18,25 +18,25 @@
     "url": "https://github.com/uselessscat/uselessscat/issues"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@octokit/rest": "^20.1.0",
-    "async": "^3.2.5",
-    "badge-maker": "^3.3.1",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@octokit/rest": "^21.0.2",
+    "async": "^3.2.6",
+    "badge-maker": "^4.1.0",
     "dotenv": "^16.4.5",
     "handlebars": "^4.7.8",
-    "simple-icons": "^11.13.0"
+    "simple-icons": "^13.14.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.0.2",
-    "@eslint/js": "^9.1.1",
-    "@stylistic/eslint-plugin-js": "^1.7.2",
-    "eslint": "^9.1.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
+    "@stylistic/eslint-plugin-js": "^2.9.0",
+    "eslint": "^9.12.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^17.2.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "globals": "^15.0.0"
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.11.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "globals": "^15.11.0"
   }
 }
