@@ -332,7 +332,7 @@
             },
             "nifi": {
                 "label": "Nifi",
-                "logo": "si",
+                "logo": "siApachenifi",
                 "topic": "nifi",
                 "color": "#728D9B",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:nifi"
@@ -403,7 +403,7 @@
             "aws": {
                 "color": "#232F3E",
                 "label": "AWS",
-                "logo": "siAmazonaws",
+                "logo": "siAmazonwebservices",
                 "topic": "aws",
                 "url": "https://github.com/search?q=user:uselessscat%20topic:aws"
             },
