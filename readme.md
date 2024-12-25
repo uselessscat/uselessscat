@@ -71,20 +71,5 @@
 
 ## Pinned
 
-[![assembler-practices](assets/pinned/assembler-practices.svg)](https://github.com/uselessscat/assembler-practices)
-[![c-practices](assets/pinned/c-practices.svg)](https://github.com/uselessscat/c-practices)
-[![clojure-practices](assets/pinned/clojure-practices.svg)](https://github.com/uselessscat/clojure-practices)
-[![cpp-practices](assets/pinned/cpp-practices.svg)](https://github.com/uselessscat/cpp-practices)
-[![csharp-practices](assets/pinned/csharp-practices.svg)](https://github.com/uselessscat/csharp-practices)
-[![dart-practices](assets/pinned/dart-practices.svg)](https://github.com/uselessscat/dart-practices)
-[![elixir-practices](assets/pinned/elixir-practices.svg)](https://github.com/uselessscat/elixir-practices)
-[![golang-practices](assets/pinned/golang-practices.svg)](https://github.com/uselessscat/golang-practices)
-[![haskell-practices](assets/pinned/haskell-practices.svg)](https://github.com/uselessscat/haskell-practices)
-[![java-practices](assets/pinned/java-practices.svg)](https://github.com/uselessscat/java-practices)
-[![javascript-practices](assets/pinned/javascript-practices.svg)](https://github.com/uselessscat/javascript-practices)
-[![lua-practices](assets/pinned/lua-practices.svg)](https://github.com/uselessscat/lua-practices)
 [![ml-practices](assets/pinned/ml-practices.svg)](https://github.com/uselessscat/ml-practices)
-[![python-practices](assets/pinned/python-practices.svg)](https://github.com/uselessscat/python-practices)
-[![rust-practices](assets/pinned/rust-practices.svg)](https://github.com/uselessscat/rust-practices)
-[![shell-practices](assets/pinned/shell-practices.svg)](https://github.com/uselessscat/shell-practices)
-[![zig-practices](assets/pinned/zig-practices.svg)](https://github.com/uselessscat/zig-practices)
+[![programming-practices](assets/pinned/programming-practices.svg)](https://github.com/uselessscat/programming-practices)
